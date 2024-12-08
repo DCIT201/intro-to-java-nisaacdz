@@ -14,12 +14,19 @@ public class TemperatureConverter {
     public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         double celsius, fahrenheit;
+        int choice;
         
         while (true) {
             System.out.println("Enter 1 to convert Celsius to Fahrenheit");
             System.out.println("Enter 2 to convert Fahrenheit to Celsius");
             System.out.println("Enter 3 to exit");
-            int choice = scanner.nextInt();
+            
+            while (!scanner.hasNextInt()) {
+                System.out.println("Invalid choice");
+                scanner.next();
+            }
+
+            choice = scanner.nextInt();
             
             switch (choice) {
                 case 1:
